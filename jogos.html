@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jogos compatíveis — VoltFrame</title>
+<meta name="description" content="Perfis prontos para Roblox, VALORANT, CS2, Minecraft, Point Blank, CrossFire, Fortnite e mais.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="jogos">
+<main>
+<section class="hero sm">
+  <div class="gridbg"></div><div class="glow"></div>
+  <div class="wrap in">
+    <span class="mono">Biblioteca · 15 perfis</span>
+    <h1>Seus jogos.<br><em class="grad">Seus ajustes.</em></h1>
+    <p class="sub">Abra o jogo e o VoltFrame reconhece na hora. Cada título se conecta aos módulos que você escolheu — e o Roblox tem perfis gráficos exclusivos.</p>
+    <div class="props"><span>Detecção automática</span><span>Perfis salvos na conta</span><span>Funciona com qualquer jogo via Boost</span></div>
+  </div>
+</section>
+
+<section class="blk tight"><div class="wrap">
+  <div class="gfilter" role="group" aria-label="Filtrar jogos">
+    <button class="fbtn" data-cat="todos" aria-pressed="true">Todos</button>
+    <button class="fbtn" data-cat="competitivo" aria-pressed="false">Competitivos</button>
+    <button class="fbtn" data-cat="fps" aria-pressed="false">FPS</button>
+    <button class="fbtn" data-cat="casual" aria-pressed="false">Casuais</button>
+    <label for="gsearch" class="sr">Buscar jogo</label>
+    <input id="gsearch" type="search" placeholder="Buscar jogo…">
+  </div>
+  <div class="gcards" id="gcards"></div>
+  <p class="note">// mostrando os destaques · a lista completa de 15 perfis vem da configuração pública do VoltFrame</p>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="bento">
+    <div class="bx w6" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:center">
+      <div style="display:grid;gap:14px">
+        <span class="mono or">Exclusivo · Roblox</span>
+        <h2 style="font-size:clamp(30px,4.5vw,52px);line-height:1">Roblox fluido, <em class="or">do seu jeito.</em></h2>
+        <p>Escolha a qualidade gráfica direto pelo VoltFrame, sem abrir menus do jogo. Mudou de ideia? Restaure com um clique.</p>
+        <a class="btn pri" href="guia-fps.html#diagnostico" style="justify-self:start">Diagnosticar meu Roblox →</a>
+      </div>
+      <div>
+        <span class="mono">Perfil gráfico</span>
+        <div class="profiles" id="profiles" role="group" aria-label="Perfil gráfico do Roblox">
+          <button data-p="Desempenho" aria-pressed="true">Desempenho<small>máx. FPS</small></button>
+          <button data-p="Equilibrado" aria-pressed="false">Equilibrado<small>visual + fluidez</small></button>
+          <button data-p="Automático" aria-pressed="false">Automático<small>o jogo decide</small></button>
+        </div>
+        <p id="pdesc" style="margin-top:14px">Prioriza FPS: reduz qualidade gráfica do Roblox para máxima fluidez.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="head"><span class="mono">Como a detecção funciona</span><h2>Abriu o jogo? <em>Já está pronto.</em></h2></div>
+  <div class="steps">
+    <div><span class="mono or">[01]</span><h3>Selecione o jogo</h3><p>Abra a biblioteca Jogos no aplicativo e escolha seu título.</p></div>
+    <div><span class="mono or">[02]</span><h3>Configure o perfil</h3><p>Defina os módulos — e, no Roblox, a qualidade gráfica ideal.</p></div>
+    <div><span class="mono or">[03]</span><h3>Jogue com Boost</h3><p>O IntelliGame reconhece o executável e aplica tudo automaticamente.</p></div>
+  </div>
+</div></section>
+
+<section class="cta">
+  <div class="gridbg"></div><div class="glow" style="top:50%"></div>
+  <div class="wrap in">
+    <h2>Seu jogo, <em>no máximo.</em></h2>
+    <div class="row" style="justify-content:center"><a class="btn fire" href="planos.html">Começar grátis ↓</a><a class="btn gh" href="guia-fps.html">Guia de FPS</a></div>
+  </div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

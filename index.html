@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoltFrame</title>
+<meta name="description" content="Boost em 1 clique, telemetria ao vivo e ajustes reversíveis para jogar no seu melhor no Windows 10 e 11.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+<main>
+<section class="hero">
+  <div class="gridbg"></div><div class="glow"></div>
+  <div class="wrap in">
+    <a class="pill" href="#modulos"><b>NOVO</b> Central de Manutenção com prévia de caches →</a>
+    <h1>Jogue no seu melhor.<br><em class="grad">Com o PC a seu favor.</em></h1>
+    <p class="sub">O otimizador gamer brasileiro para Windows 10 e 11. Prepare a sessão em um clique, veja tudo o que acontece no PC e mantenha o controle de cada ajuste.</p>
+    <form class="cmd" id="cmd">
+      <span class="pr">&gt;_</span>
+      <label for="q" class="sr">Qual jogo você quer otimizar?</label>
+      <input id="q" autocomplete="off" placeholder="Qual jogo você quer otimizar?">
+      <button type="submit">Analisar ↵</button>
+    </form>
+    <div class="out" id="out" aria-live="polite"></div>
+    <div class="chips" id="chips"><button>Roblox</button><button>VALORANT</button><button>Counter-Strike 2</button><button>Minecraft</button><button>Fortnite</button></div>
+    <div class="props"><span>Grátis para começar</span><span>Boost em 1 clique</span><span>100% reversível</span><span>Sem mexer nos arquivos do jogo</span></div>
+  </div>
+
+  <div class="wrap">
+    <div class="tele" aria-label="Painel de demonstração (valores ilustrativos)">
+      <div class="bar"><span><span class="dot"></span>MONITORANDO · <span id="game">VALORANT.exe</span></span><span>demonstração · valores ilustrativos</span></div>
+      <div class="tgrid" id="tgrid"></div>
+      <div class="tfoot"><span class="mono">Perfil · Modo competitivo</span><button class="boost" id="boost" aria-pressed="false">⚡ Ativar Boost</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk"><div class="wrap">
+  <div class="head"><span class="mono">Por que o VoltFrame</span><h2>Feito para quem leva <em>a partida a sério.</em></h2><p>Três princípios guiam cada recurso do app.</p></div>
+  <div class="pillars">
+    <div class="pillar"><div class="ic">⚡</div><h3>Pronto em segundos</h3><p>O IntelliGame detecta o jogo e o Boost prepara prioridade, energia e GPU em um clique. Você só aperta play.</p></div>
+    <div class="pillar"><div class="ic">◉</div><h3>Clareza total</h3><p>CPU, GPU, RAM, ping, rede e FPS lado a lado. Você enxerga o que pesa e decide com dados, não com achismo.</p></div>
+    <div class="pillar"><div class="ic">↺</div><h3>Controle seu</h3><p>Cada ajuste é registrado e restaurado quando a sessão termina. Nada é alterado nos arquivos do jogo.</p></div>
+  </div>
+</div></section>
+
+<section class="blk" id="jogos"><div class="wrap">
+  <div class="head"><span class="mono">Biblioteca · 15 perfis</span><h2>Seus jogos favoritos. <em>Já preparados.</em></h2><p>Detecção automática do executável. Cada jogo se conecta aos módulos que você escolheu.</p></div>
+  <div class="lgrid" id="lgrid"></div>
+  <div class="hint">↳ passe o mouse sobre um jogo · <a class="or" href="jogos.html">ver biblioteca completa</a></div>
+</div></section>
+
+<section class="blk" id="modulos"><div class="wrap">
+  <div class="head"><span class="mono">Módulos</span><h2>Muito mais que <em>um contador de FPS.</em></h2><p>Meça, ajuste e compare. Cada módulo resolve uma parte da sua sessão.</p></div>
+  <div class="bento">
+    <div class="bx w4"><span class="mono">Boost FPS</span><h3>A sessão perfeita em um clique.</h3><p>Prioridade do jogo, plano de energia, capturas em segundo plano e preferência de GPU. Ao desativar, tudo volta como estava.</p>
+<div class="term"><span class="k">volt</span> boost --perfil competitivo
+<span class="g">✓</span> prioridade do processo     <span class="y">alta</span>
+<span class="g">✓</span> plano de energia          <span class="y">desempenho</span>
+<span class="g">✓</span> capturas em 2º plano      <span class="y">pausadas</span>
+<span class="g">✓</span> restauração               <span class="y">registrada</span></div></div>
+    <div class="bx w2"><span class="mono">Smart Memory</span><h3>RAM sob controle.</h3><p>Veja o uso real e libere memória de forma inteligente, sem interromper o jogo.</p><div class="ram" id="ramviz" aria-hidden="true"></div></div>
+    <div class="bx w2"><span class="mono">IntelliGame</span><h3>Reconhece. Aplica.</h3><p>Identifica o jogo aberto e liga automaticamente ao seu perfil.</p></div>
+    <div class="bx w2"><span class="mono">Multitarefa Gamer</span><h3>Discord e OBS em paz.</h3><p>Voz, áudio e live seguem protegidos enquanto o jogo ganha prioridade.</p></div>
+    <div class="bx w2"><span class="mono">Central de Manutenção</span><h3>PC leve, com prévia.</h3><p>Caches de Roblox, Discord, Steam e DirectX. Você escolhe antes de limpar.</p></div>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap">
+  <div class="head"><span class="mono">Como funciona</span><h2>Meça. Ajuste. <em>Evolua.</em></h2></div>
+  <div class="steps">
+    <div><span class="mono or">[01]</span><h3>Entenda seu PC</h3><p>Abra o VoltFrame e veja CPU, GPU e RAM em tempo real. Em segundos você sabe onde está o gargalo.</p></div>
+    <div><span class="mono or">[02]</span><h3>Escolha seus módulos</h3><p>Ative o que combina com o seu setup. Suas preferências ficam salvas na conta.</p></div>
+    <div><span class="mono or">[03]</span><h3>Boost e jogue</h3><p>Com o jogo detectado, acompanhe a sessão e sinta a consistência partida após partida.</p></div>
+  </div>
+</div></section>
+
+<section class="blk" id="ajuda"><div class="wrap faq">
+  <div class="head" style="margin:0"><span class="mono">Transparência</span><h2>Confiança se constrói <em>com clareza.</em></h2><p>Mostramos exatamente o que o app faz — e onde ele brilha: quando programas disputam CPU, RAM ou energia com o seu jogo, organizar a sessão faz diferença real.</p><a class="btn gh" href="guia-fps.html" style="justify-self:start">Ler o Guia de FPS →</a></div>
+  <div>
+    <details open><summary>Quanto de FPS eu ganho?</summary><p>Depende do seu hardware, do jogo e do gargalo. O VoltFrame mostra o antes e o depois para você ver o resultado no seu PC — com seus próprios números.</p></details>
+    <details><summary>É seguro? Mexe nos arquivos do jogo?</summary><p>Os módulos trabalham externamente no Windows. Nenhuma DLL é injetada e nenhum arquivo do jogo é modificado.</p></details>
+    <details><summary>Posso desfazer as alterações?</summary><p>Sim. Ajustes do Boost são registrados e restaurados automaticamente quando você desativa a sessão.</p></details>
+    <details><summary>Preciso pagar para usar?</summary><p>Não. O plano FREE já inclui o essencial. Você libera mais módulos quando quiser.</p></details>
+  </div>
+</div></section>
+
+<section class="cta">
+  <div class="gridbg"></div><div class="glow" style="top:50%"></div>
+  <div class="wrap in">
+    <h2>Sua melhor partida<br><em>começa aqui.</em></h2>
+    <div class="row" style="justify-content:center"><a class="btn fire" href="planos.html">Baixar grátis para Windows ↓</a><a class="btn gh" href="jogos.html">Ver jogos compatíveis</a></div>
+    <span class="mono">Windows 10 / 11 · feito no Brasil</span>
+  </div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

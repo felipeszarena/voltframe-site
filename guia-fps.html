@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia de FPS — VoltFrame</title>
+<meta name="description" content="Aprenda a ler CPU, GPU, RAM, rede e frametime e encontre o ajuste certo para o seu PC.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="guia">
+<main>
+<section class="hero sm">
+  <div class="gridbg"></div><div class="glow"></div>
+  <div class="wrap in">
+    <span class="mono">Guia gratuito · leitura de 6 min</span>
+    <h1>Mais FPS<br><em class="grad">começa com método.</em></h1>
+    <p class="sub">Aprenda a ler o seu PC como um profissional: descubra o gargalo, teste uma mudança por vez e mantenha o que funciona.</p>
+    <div class="row" style="justify-content:center"><a class="btn fire" href="#diagnostico">Fazer diagnóstico rápido</a><a class="btn gh" href="#metodo">Ler o guia</a></div>
+  </div>
+</section>
+
+<section class="blk tight"><div class="wrap layout">
+  <nav class="toc" aria-label="Neste guia">
+    <span class="mono">Neste guia</span>
+    <a href="#metodo">01 · O método</a>
+    <a href="#metricas">02 · As métricas</a>
+    <a href="#diagnostico">03 · Diagnóstico rápido</a>
+    <a href="#guias">04 · Guias por jogo</a>
+  </nav>
+
+  <div class="prose">
+    <section id="metodo">
+      <span class="mono or">01 · O método</span>
+      <h2>Referência, mudança, <em>comparação.</em></h2>
+      <p>O caminho mais rápido para jogar melhor é simples: <strong>anote como o jogo está hoje</strong>, mude <strong>uma coisa por vez</strong> e compare. Assim você sabe exatamente o que trouxe resultado — e fica só com o que funcionou.</p>
+      <div class="term"><span class="k">1.</span> jogue 5 min e anote FPS médio, frametime e uso de CPU/GPU
+<span class="k">2.</span> aplique <span class="y">um</span> ajuste (gráfico, Boost, processo fechado)
+<span class="k">3.</span> repita o mesmo trecho do jogo
+<span class="k">4.</span> <span class="g">✓ melhorou?</span> mantenha · <span class="y">não?</span> desfaça e teste o próximo</div>
+    </section>
+
+    <section id="metricas">
+      <span class="mono or">02 · As métricas</span>
+      <h2>Cada número conta <em>uma parte da história.</em></h2>
+      <p>FPS mostra o resultado. As outras métricas mostram a causa.</p>
+      <div class="bt">
+        <div><b>CPU</b><h3>Processador</h3><p>Alta e constante? Programas em segundo plano estão disputando com o jogo.</p></div>
+        <div><b>GPU</b><h3>Placa de vídeo</h3><p>Perto de 100%? Ajustes gráficos são o seu maior aliado.</p></div>
+        <div><b>RAM</b><h3>Memória</h3><p>Pouca memória livre gera engasgos. Liberar espaço traz fluidez.</p></div>
+        <div><b>PING · REDE</b><h3>Conexão</h3><p>Atraso entre você e o servidor. Cabo e menos downloads ajudam.</p></div>
+        <div><b>FRAMETIME</b><h3>Consistência</h3><p>O tempo entre quadros. Estável = sensação de jogo liso.</p></div>
+      </div>
+    </section>
+
+    <section id="diagnostico">
+      <span class="mono or">03 · Ferramenta</span>
+      <h2>Diagnóstico <em>rápido.</em></h2>
+      <p>Informe o que você vê durante a partida. A análise acontece no seu navegador — nenhum dado é enviado.</p>
+      <form class="diag" id="diag" onsubmit="return false">
+        <div class="sliders">
+          <div class="sl"><label for="cpu">CPU <output id="cpuo">50%</output></label><input type="range" id="cpu" min="0" max="100" value="50"></div>
+          <div class="sl"><label for="gpu">GPU <output id="gpuo">70%</output></label><input type="range" id="gpu" min="0" max="100" value="70"></div>
+          <div class="sl"><label for="ram">RAM <output id="ramo">60%</output></label><input type="range" id="ram" min="0" max="100" value="60"></div>
+          <div class="sl"><label for="ping">PING <output id="pingo">30 ms</output></label><input type="range" id="ping" min="5" max="200" value="30"></div>
+        </div>
+        <div class="verdict" aria-live="polite"><span class="mono">Provável foco</span><h4 id="vh">—</h4><p id="vp"></p></div>
+      </form>
+    </section>
+
+    <section id="guias">
+      <span class="mono or">04 · Guias por jogo</span>
+      <h2>Vá direto ao <em>seu jogo.</em></h2>
+      <div class="guides">
+        <a class="gd" href="jogos.html#roblox"><span class="mono">Roblox</span><h3>Roblox travando?</h3><p>Perfis gráficos e o que observar nas travadas.</p><span class="go">Ler guia →</span></a>
+        <a class="gd" href="jogos.html#cs2"><span class="mono">Counter-Strike 2</span><h3>CS2 estável</h3><p>CPU, capturas, frametime e leitura das métricas.</p><span class="go">Ler guia →</span></a>
+        <a class="gd" href="jogos.html#minecraft"><span class="mono">Minecraft</span><h3>Minecraft fluido</h3><p>Java, memória, entidades, shaders e distância.</p><span class="go">Ler guia →</span></a>
+        <a class="gd" href="#metricas"><span class="mono">Jogo + vídeo</span><h3>Jogar com live aberta</h3><p>YouTube, Twitch, Discord ou navegador juntos.</p><span class="go">Ler guia →</span></a>
+      </div>
+    </section>
+  </div>
+</div></section>
+
+<section class="cta">
+  <div class="gridbg"></div><div class="glow" style="top:50%"></div>
+  <div class="wrap in">
+    <h2>Veja tudo isso <em>ao vivo.</em></h2>
+    <p class="sub" style="color:var(--mu)">O VoltFrame mostra essas métricas enquanto você joga.</p>
+    <a class="btn fire" href="planos.html">Baixar grátis ↓</a>
+  </div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
