@@ -1,0 +1,112 @@
+/* Motion layer: page transitions, scroll reveals, hover in/out, scroll-linked effects. */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .28s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vt-in .45s cubic-bezier(.16,1,.3,1) both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-8px);filter:blur(4px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(12px);filter:blur(6px)}}
+
+:root{--ease-out:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1)}
+
+/* scroll progress */
+.sprog{position:fixed;top:0;left:0;right:0;height:2px;z-index:50;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--y1),var(--o1),var(--o2),var(--r1));pointer-events:none}
+
+/* header: condense + hide on scroll down */
+header.top{transition:transform .45s var(--ease-out),background .3s,border-color .3s}
+header.top nav.main{transition:padding .35s var(--ease-out)}
+.scrolled header.top{background:rgba(7,8,11,.88)}
+.scrolled header.top nav.main{padding:8px 0}
+.hide-nav header.top{transform:translateY(-110%)}
+
+/* hero intro: words rise in */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.w>span{display:inline-block;transform:translateY(105%);animation:rise .9s var(--ease-out) forwards;animation-delay:calc(var(--i)*55ms + 120ms)}
+.w>span.grad{padding-right:.08em}
+@keyframes rise{to{transform:none}}
+.intro{opacity:0;transform:translateY(14px);animation:fadeup .8s var(--ease-out) forwards;animation-delay:calc(var(--d,0)*1ms)}
+@keyframes fadeup{to{opacity:1;transform:none}}
+
+/* hero parallax */
+.hero .glow,.cta .glow{translate:0 var(--py,0px)}
+.hero .gridbg{translate:0 calc(var(--py,0px)*-.4)}
+.hero .in{opacity:var(--ho,1);translate:0 calc(var(--py,0px)*-.25)}
+
+/* scroll reveal — only applied to elements that start below the fold */
+/* uses an animation on `translate` so it never fights hover transitions on `transform` */
+.rv.pre{opacity:0}
+.rv.show{animation:reveal .9s var(--ease-out) both;animation-delay:calc(var(--s,0)*70ms)}
+@keyframes reveal{from{opacity:0;translate:0 32px;filter:blur(6px)}}
+
+/* section headings: accent word sweeps in */
+.head h2 em,.prose h2 em,.cta h2 em{display:inline-block;transition:clip-path 1.1s var(--ease-io) .15s;clip-path:inset(0 0 0 0)}
+.rv.pre .head h2 em,.head.rv.pre h2 em,.prose section.rv.pre h2 em{clip-path:inset(0 100% 0 0)}
+
+/* telemetry tilts up into place */
+.tele{transform:perspective(1400px) rotateX(var(--tx,0deg)) scale(var(--ts,1));transform-origin:50% 0;transition:box-shadow .5s}
+.tele:hover{box-shadow:0 30px 120px -40px rgba(250,80,15,.45)}
+
+/* cta headline scales with scroll */
+.cta h2{transform:scale(var(--cs,1));transition:transform .1s linear}
+
+/* steps: line fills as you scroll */
+.steps{position:relative}
+.steps::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--y1),var(--o2))}
+
+/* ---------- hovers: smooth in AND out ---------- */
+.pillar,.bx,.gc,.gd,.plan{position:relative;isolation:isolate;transition:transform .5s var(--ease-out),border-color .4s,box-shadow .5s var(--ease-out)}
+.pillar::after,.bx::after,.gc::after,.gd::after,.plan::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .5s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(250,80,15,.14),transparent 45%)}
+.pillar:hover,.bx:hover,.gd:hover,.plan:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 24px 60px -30px rgba(0,0,0,.9)}
+.gc:hover{transform:translateY(-6px)}
+.pillar:hover::after,.bx:hover::after,.gc:hover::after,.gd:hover::after,.plan:hover::after{opacity:1}
+.plan.pro:hover{box-shadow:0 0 90px -16px rgba(250,80,15,.7)}
+
+.pillar .ic{transition:transform .6s var(--ease-out),background .4s}
+.pillar:hover .ic{transform:rotate(-8deg) scale(1.1)}
+
+.gc .cover span{transition:transform .7s var(--ease-out),letter-spacing .7s var(--ease-out)}
+.gc:hover .cover span{transform:scale(1.08);letter-spacing:.01em}
+.gc .cover::after{transition:background-position 1.2s var(--ease-out)}
+.gc:hover .cover::after{background-position:11px 11px}
+
+.gd .go{display:inline-block;transition:transform .4s var(--ease-out)}
+.gd:hover .go{transform:translateX(6px)}
+
+.lg{transition:color .35s,background .35s}
+.lg .pop{transition:opacity .3s var(--ease-out),transform .45s var(--ease-out)}
+
+/* buttons: magnetic + shine */
+.btn{position:relative;overflow:hidden;translate:var(--bx,0) var(--by,0);transition:translate .35s var(--ease-out),background .3s,border-color .3s,color .3s,box-shadow .4s}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease-out);pointer-events:none}
+.btn:hover::before{transform:translateX(120%)}
+.btn.fire:hover{box-shadow:0 10px 40px -10px rgba(250,80,15,.8)}
+
+.links a{transition:color .25s}
+.links a:not([aria-current])::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--o1);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease-out)}
+.links a{position:relative}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+
+details{transition:border-color .3s}
+details:hover{border-color:var(--line2)}
+details p{animation:none}
+details[open] p{animation:fadeup .5s var(--ease-out)}
+summary::after{transition:transform .35s var(--ease-out)}
+details[open] summary::after{transform:rotate(180deg)}
+
+.chips button,.fbtn,.profiles button,.toggle button{transition:background .25s,color .25s,border-color .25s,transform .3s var(--ease-out)}
+.chips button:active,.fbtn:active,.profiles button:active{transform:scale(.95)}
+
+/* game cards re-enter when filtering */
+.gc.enter{animation:cardin .55s var(--ease-out) both;animation-delay:calc(var(--s,0)*45ms)}
+@keyframes cardin{from{opacity:0;transform:translateY(16px) scale(.97)}}
+
+.verdict h4{transition:color .4s}
+.verdict.pulse{animation:vpulse .5s var(--ease-out)}
+@keyframes vpulse{from{transform:scale(.985);opacity:.6}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .w>span,.intro{transform:none;opacity:1}
+  .rv.pre{opacity:1;transform:none;filter:none}
+  .hero .glow,.hero .gridbg,.hero .in{translate:none}
+  .tele,.cta h2{transform:none}
+  @view-transition{navigation:none}
+}
